@@ -1,0 +1,104 @@
+.custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    &+label{
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        margin: 10px 0;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+        color: #4A4A4A;
+        cursor: pointer;
+        &::before{
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border: 1px solid #9ABBCE;
+            border-radius: 2px;
+            margin-right: 0.5em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 60% 60%;
+        }
+    }
+    &:checked+label::before{
+        border: 1px solid #2196F3;
+        background-color: #fff;
+        background-image: url('./Shape.svg');
+    }
+}
+
+.filters {
+    width: 232px;
+    flex-shrink: 0;
+    height: fit-content;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 20px 0;
+    &>h3 {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 12px;
+        display: flex;
+        align-items: flex-end;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding-left: 20px;
+        color: #4A4A4A;
+    }
+    .checkboxes-group > div {
+        padding: 0 20px;
+        &:hover{
+            background-color: #F1FCFF;
+        }
+    }
+    .checkboxes-group > div:last-child label {
+        margin-bottom: 0px;
+    }
+    .checkboxes-group > div:first-child label{
+        margin-top: 20px;
+    }
+    @media (max-width: 960px) {
+        padding: 20px;
+        width: 502px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        &>h3{
+            padding-left: 0;
+        }
+        .checkboxes-group{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            div {
+                padding: 0
+            }
+            div label,
+            div:first-child label,
+            div:last-child label{
+                margin: 0;
+            }
+        }
+    }
+
+    @media(max-width: 700px){
+        min-width: 370px;
+        width: 100%;
+    }
+
+    @media(max-width: 370px) {
+        min-width: 320px;
+    }
+}

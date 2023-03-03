@@ -1,0 +1,47 @@
+@mixin font-style($size, $height, $color) {
+    font-style: normal;
+    font-weight: 600;
+    font-size: $size;
+    line-height: $height;
+    display: flex;
+    align-items: center;
+    color: $color;
+}
+
+.ticket{
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    height: 184px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    header{
+        display: flex;
+        justify-content: space-between;
+        .price{
+            @include font-style(24px, 24px, #2196F3)
+        }
+    }
+    .direct-flight-field, .return-flight-field{
+        display: flex;
+        justify-content: space-between;
+        .title{
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            @include font-style(12px, 18px, #A0B0B9)
+        }
+        .value{
+            @include font-style(14px, 21px, #4A4A4A)
+        }
+        & > div {
+            width: 100px;
+            @media(max-width: 370px) {
+                width: fit-content;
+            }
+        }
+    }
+}
