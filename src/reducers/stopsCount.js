@@ -1,23 +1,21 @@
-import { allStops } from "../actions"
+import { createReducer } from '@reduxjs/toolkit'
 
-const stopsCount = (state = [], action) => {
-    switch (action.type) {
-        case 'CHANGE_STOPS_COUNT':
-            if (state.includes(action.count)) {
-                return state.filter((item) => item !== action.count)
-            }
-            if (action.count === 'all' || state[0] === 'all') {
-                return [action.count]
-            }
-            let value = [...state, action.count]
-            if (value.length === allStops.length && allStops.every((item) => value.includes(item))) {
-                value = ['all']
-            }
-            return value
+import { allStops, changeStopsCount } from '../actions'
 
-        default:
-            return state
+const stopsCount = createReducer([], (builder) => {
+  builder.addCase(changeStopsCount, (state, action) => {
+    if (state.includes(action.payload)) {
+      return state.filter((item) => item !== action.payload)
     }
-}
+    if (action.payload === 'all' || state[0] === 'all') {
+      return [action.payload]
+    }
+    let value = [...state, action.payload]
+    if (value.length === allStops.length && allStops.every((item) => value.includes(item))) {
+      value = ['all']
+    }
+    return value
+  })
+})
 
 export default stopsCount

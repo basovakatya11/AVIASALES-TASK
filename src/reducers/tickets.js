@@ -1,17 +1,9 @@
-import { RECEIVE_TICKETS } from "../actions"
+import { createReducer } from '@reduxjs/toolkit'
 
-const tickets = (state = [], action) => {
-    switch (action.type) {
-        case 'ADD_TICKETS':
-            return [
-                ...state,
-                ...action.tickets
-            ]
-        case RECEIVE_TICKETS:
-            return action.tickets
-        default:
-            return state
-    }
-}
+import { receiveTickets } from '../actions'
+
+const tickets = createReducer([], (builder) => {
+  builder.addCase(receiveTickets, (state, action) => [...action.payload])
+})
 
 export default tickets

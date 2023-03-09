@@ -1,12 +1,9 @@
-import { tabValue } from "../actions"
+import { createReducer } from '@reduxjs/toolkit'
 
-const tabsValue = (state = tabValue.SHOW_THE_CHEAPEST, action) => {
-    switch (action.type) {
-        case 'CHANGE_TAB_VALUE':
-            return action.tab
-        default:
-            return state
-    }
-}
+import { changeTabValue } from '../actions'
+
+const tabsValue = createReducer('SHOW_THE_CHEAPEST', (builder) => {
+  builder.addCase(changeTabValue, (state, action) => action.payload)
+})
 
 export default tabsValue
