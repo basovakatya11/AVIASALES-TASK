@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { addTicketsInList } from '../../store/actions'
+import { addTicketsInList } from '../../store/ticketsSlicer'
 
 import ButtonShowMore from './ButtonShowMore'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { tabValue } from '../../store/actions'
+import { tabValue } from '../../store/ticketsSlicer'
 
 import classes from './Tabs.module.scss'
 

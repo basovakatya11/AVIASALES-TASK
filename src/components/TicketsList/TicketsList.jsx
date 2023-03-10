@@ -18,7 +18,7 @@ export default function TicketsList({ tickets, isLoading, error }) {
     ) : null
   const errorMessage = error ? (
     <div>
-      <Alert message="Error" description={`This is an error message, status: ${error}.`} type="info" showIcon />
+      <Alert message="Error" description={`This is an error message: ${error}`} type="info" showIcon />
     </div>
   ) : null
 

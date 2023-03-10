@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { changeTabs } from '../../store/actions'
+import { changeTabs } from '../../store/ticketsSlicer'
 
 import Tabs from './Tabs'
 

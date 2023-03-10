@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { changeFilters } from '../../store/actions'
+import { changeFilters } from '../../store/ticketsSlicer'
 
 import Filters from './Filters'
 
