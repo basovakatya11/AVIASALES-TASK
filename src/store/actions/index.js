@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit'
 
-import AviasalesService from '../services/AviasalesService'
-import store from '../index'
+import AviasalesService from '../../services/AviasalesService'
+import store from '../../index'
 
 export const addTickets = createAction('ADD_TICKETS')
 

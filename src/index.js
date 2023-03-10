@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 
-import rootReducer from './reducers'
+import rootReducer from './store/reducers'
 import App from './components/App'
-import { catchError, fetchTickets } from './actions'
+import { catchError, fetchTickets } from './store/actions'
 import AviasalesService from './services/AviasalesService'
 
 const store = configureStore({

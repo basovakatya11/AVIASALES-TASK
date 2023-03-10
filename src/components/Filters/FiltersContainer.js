@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
 
-import Filters from '../components/Filters'
-import { changeFilters } from '../actions'
+import { changeFilters } from '../../store/actions'
+
+import Filters from './Filters'
 
 const mapStateToProps = (state) => ({
   stopsCount: state.stopsCount,

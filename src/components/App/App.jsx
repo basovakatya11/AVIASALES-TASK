@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Filters from '../../containers/Filters'
-import Tabs from '../../containers/Tabs'
-import TicketsList from '../../containers/TicketsList'
-import ButtonShowMore from '../../containers/ButtonShowMore'
+import Filters from '../Filters/FiltersContainer'
+import Tabs from '../Tabs/TabsContainer'
+import TicketsList from '../TicketsList/TicketsListContainer'
+import ButtonShowMore from '../ButtonShowMore/ButtonShowMoreContainer'
+import img from '../../assets/images/Logo.png'
 
 import classes from './App.module.scss'
-import img from './Logo.png'
 
 export default function App() {
   return (

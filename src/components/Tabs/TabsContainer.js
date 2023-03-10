@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
 
-import Tabs from '../components/Tabs'
-import { changeTabs } from '../actions'
+import { changeTabs } from '../../store/actions'
+
+import Tabs from './Tabs'
 
 const mapStateToProps = (state) => ({
   activeTab: state.tabsValue,

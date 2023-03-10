@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
 
-import ButtonShowMore from '../components/ButtonShowMore'
-import { addTicketsInList } from '../actions'
+import { addTicketsInList } from '../../store/actions'
+
+import ButtonShowMore from './ButtonShowMore'
 
 const mapDispatchToProps = (dispatch) => {
   return {
