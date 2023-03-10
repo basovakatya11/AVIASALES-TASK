@@ -6,7 +6,7 @@ import Tabs from '../Tabs/TabsContainer'
 import TicketsList from '../TicketsList/TicketsListContainer'
 import ButtonShowMore from '../ButtonShowMore/ButtonShowMoreContainer'
 import img from '../../assets/images/Logo.png'
-import { getTickets, getSearchId } from '../../store/ticketsSlicer'
+import { getTickets, getSearchId } from '../../store/ticketsSlice'
 
 import classes from './App.module.scss'
 
