@@ -1,11 +1,12 @@
 import React, { useRef } from 'react'
 import { Spin, Alert } from 'antd'
+import { connect } from 'react-redux'
 
 import Ticket from '../Ticket'
 
 import classes from './TicketsList.module.scss'
 
-export default function TicketsList({ tickets, isLoading, error }) {
+function TicketsList({ tickets, isLoading, error }) {
   const minKeyValue = useRef(6)
   const loader = isLoading ? (
     <div style={{ padding: '20px', display: 'flex', justifyContent: 'center' }}>
@@ -42,3 +43,12 @@ export default function TicketsList({ tickets, isLoading, error }) {
     </div>
   )
 }
+
+const mapStateToProps = (state) => ({
+  tickets: state.shownTickets,
+  isLoading: state.isLoading,
+  error: state.error,
+})
+
+const TicketsListContainer = connect(mapStateToProps)(TicketsList)
+export default TicketsListContainer

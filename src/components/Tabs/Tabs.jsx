@@ -1,10 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-import { tabValue } from '../../store/ticketsSlice'
+import { changeTabs, tabValue } from '../../store/ticketsSlice'
 
 import classes from './Tabs.module.scss'
 
-export default function Tabs({ activeTab, changeTabsValue }) {
+function Tabs({ activeTab, changeTabsValue }) {
   const isActive = (tab) => {
     return tab === activeTab ? `${classes.tab} ${classes['tab-active']}` : classes.tab
   }
@@ -36,3 +37,10 @@ export default function Tabs({ activeTab, changeTabsValue }) {
     </div>
   )
 }
+
+const mapStateToProps = (state) => ({ activeTab: state.tabsValue })
+
+const mapDispatchToProps = (dispatch) => ({ changeTabsValue: (tab) => dispatch(changeTabs(tab)) })
+
+const TabsContainer = connect(mapStateToProps, mapDispatchToProps)(Tabs)
+export default TabsContainer

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import Filters from '../Filters/FiltersContainer'
-import Tabs from '../Tabs/TabsContainer'
-import TicketsList from '../TicketsList/TicketsListContainer'
-import ButtonShowMore from '../ButtonShowMore/ButtonShowMoreContainer'
+import Filters from '../Filters'
+import Tabs from '../Tabs'
+import TicketsList from '../TicketsList'
+import ButtonShowMore from '../ButtonShowMore'
 import img from '../../assets/images/Logo.png'
 import { getTickets, getSearchId } from '../../store/ticketsSlice'
 

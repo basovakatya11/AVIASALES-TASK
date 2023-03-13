@@ -1,3 +1,3 @@
-import ButtonShowMore from './ButtonShowMore'
+import ButtonShowMoreContainer from './ButtonShowMore'
 
-export default ButtonShowMore
+export default ButtonShowMoreContainer

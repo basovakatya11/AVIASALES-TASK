@@ -1,3 +1,3 @@
-import TicketsList from './TicketsList'
+import TicketsListContainer from './TicketsList'
 
-export default TicketsList
+export default TicketsListContainer

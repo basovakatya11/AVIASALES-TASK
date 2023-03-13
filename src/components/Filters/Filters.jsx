@@ -1,8 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
+import { changeFilters } from '../../store/ticketsSlice'
 
 import classes from './Filters.module.scss'
 
-export default function Filters({ stopsCount, changeStopsCount }) {
+function Filters({ stopsCount, changeStopsCount }) {
   const onCheck = (event) => changeStopsCount(event.target.id)
 
   const isChecked = (id) => {
@@ -80,3 +83,10 @@ export default function Filters({ stopsCount, changeStopsCount }) {
     </div>
   )
 }
+
+const mapStateToProps = (state) => ({ stopsCount: state.stopsCount })
+
+const mapDispatchToProps = (dispatch) => ({ changeStopsCount: (count) => dispatch(changeFilters(count)) })
+
+const FiltersContainer = connect(mapStateToProps, mapDispatchToProps)(Filters)
+export default FiltersContainer
